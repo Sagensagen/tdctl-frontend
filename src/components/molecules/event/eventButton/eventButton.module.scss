@@ -1,0 +1,76 @@
+@import 'src/styles/colors';
+.formContent {
+  display: flex;
+  flex-direction: column;
+  // gap: 25px;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.cancellationWrapper {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: 40%;
+    margin: 4% 0 2.5% 0;
+  }
+}
+
+.cancellationMessageContainer {
+  display: flex;
+  align-self: center;
+  text-align: center;
+  width: 75%;
+  a {
+    color: #7d86d5;
+  }
+}
+
+.allergyTextFieldContainer {
+  animation: containerSlideDown 0.11s;
+}
+
+.allergyTextFieldAnim {
+  animation: slideDown 0.5s;
+}
+
+@keyframes containerSlideDown {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: auto;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 516px) {
+  .formContent {
+    padding: 0.5rem;
+  }
+  .cancellationWrapper {
+    p {
+      font-size: medium;
+    }
+    button {
+      width: 100%;
+      margin: 4% 0 2.5% 0;
+    }
+  }
+  .cancellationMessageContainer {
+    width: 100%;
+  }
+}

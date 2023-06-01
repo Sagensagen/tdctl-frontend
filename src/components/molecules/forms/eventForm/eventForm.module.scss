@@ -1,0 +1,97 @@
+@import '../../../atoms//textfield/textfield.module.scss';
+
+.eventForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  textarea {
+    min-height: 7.5vh;
+  }
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 1rem;
+
+  input {
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  h5 {
+    font-size: 1rem;
+    margin: 1rem 0 1rem;
+  }
+}
+
+.imgReupload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+
+  input {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+.registerheader {
+  width: 100%;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  input {
+    box-sizing: border-box;
+  }
+}
+
+.toggleContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+
+  p {
+    line-height: 0.5;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .eventContainer {
+    width: 100%;
+    input {
+      width: unset;
+    }
+    textarea {
+      width: unset;
+    }
+  }
+}

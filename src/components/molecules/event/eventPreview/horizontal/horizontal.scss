@@ -1,0 +1,92 @@
+.landscapeView {
+  display: flex;
+  width: 100%;
+  background-color: #2b2c3d;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+  flex-grow: 1;
+}
+
+.landscapeViewContainer {
+  display: flex;
+  align-items: baseline;
+  flex-grow: 1;
+  width: 100%;
+  flex-shrink: 1;
+  flex-basis: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.landscapeViewDate {
+  display: flex;
+  // max-width: 5rem;
+  white-space: break-space;
+  width: min-content;
+  min-width: 90px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #ccc;
+}
+
+.landscapeViewTextContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+.landscapeViewText {
+  display: flex;
+  width: 100%;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.landscapeViewAddress {
+  display: flex;
+  font-size: smaller;
+  color: #a9a9a9;
+  font-weight: 300;
+}
+
+.landscapeViewImage {
+  display: flex;
+  align-self: center;
+  height: 5rem;
+  width: 5rem;
+  min-width: 5rem;
+  min-height: 5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .landscapeViewImage {
+    height: 4rem;
+    width: 4rem;
+    min-width: 4rem;
+    min-height: 4rem;
+    border-radius: 1rem;
+  }
+
+  .landscapeViewContainer {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .landscapeViewText {
+    padding-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

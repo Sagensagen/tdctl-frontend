@@ -1,0 +1,49 @@
+name: Deploy production image
+
+# TODO add workflow run
+# To use workflow_run the file needs to be on master -> add in new pr
+on:
+  push:
+    branches: ['*']
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Set Docker tags
+        run: |
+          echo "tag=${GITHUB_SHA}" >> $GITHUB_ENV
+
+      - name: Log into GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          file: .docker/dockerfile
+          # tags: ghcr.io/sagensagen/tdctl-frontend:${{ env.tag }}
+          tags: ghcr.io/sagensagen/tdctl-frontend:latest
+
+      # - name: Update Helm Chart Values
+      #   uses: Nextdoor/helm-set-image-tag-action@main
+      #   with:
+      #     values_files: deploy/values.yaml
+      #     tag_keys: .image.tag
+      #     tag_value: ${{ env.tag }}
+      # - name: login to server and launch newest image
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     key: ${{ secrets.SSH_KEY }}
+      #     script: ./pull-and-run-frontend.sh

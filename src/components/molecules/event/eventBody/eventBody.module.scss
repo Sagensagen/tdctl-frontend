@@ -1,0 +1,181 @@
+.editContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.contentContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 5%;
+  margin-bottom: 1rem;
+}
+.contentHeader {
+  grid-column: 1 / span 7;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.description {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  grid-column: 1 / span 5;
+}
+
+.infoContainer {
+  width: 100%;
+  grid-column: 6 / span 2;
+  h4 {
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+}
+
+.descriptionContainer {
+  display: inline-block;
+  width: 95%;
+  padding-left: 5%;
+  height: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-align: left;
+  h3 {
+    margin-top: 0.5rem;
+  }
+  textarea {
+    height: 15vh;
+    overflow: auto;
+  }
+}
+
+.infoContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.infoWrapper {
+  display: flex;
+  width: 75%;
+  align-items: center;
+}
+
+.infoSection {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 0.25rem;
+
+  ol {
+    max-height: 15vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  p {
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1rem;
+    // line-height: 0.1rem;
+  }
+  button {
+    width: 80%;
+    margin: 10% 0px 5% 0px;
+    align-self: center;
+  }
+}
+
+.adminButtons {
+  margin: 1%;
+  width: 25%;
+}
+
+.header {
+  min-height: 35vh;
+  border-radius: 20px 20px 0px 0px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.toggleWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
+  gap: 0.25rem;
+}
+
+@mixin mobile_base {
+  .contentContainer {
+    display: inline;
+    width: 90%;
+    padding: 0 5% 0 5%;
+  }
+
+  .contentHeader {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .infoContainer {
+    justify-content: center;
+  }
+
+  .infoSection {
+    padding-left: 1rem;
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    button {
+      width: 60%;
+      margin: 2.5% 0px 2.5% 0px;
+      align-self: center;
+      p {
+        width: 100%;
+      }
+    }
+
+    word-break: break-word;
+  }
+  .descriptionContainer {
+    padding: 0px;
+  }
+
+  .description {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 890px) {
+  @include mobile_base;
+}
+
+@media screen and (max-width: 451px) {
+  @include mobile_base;
+  .infoSection {
+    button {
+      width: 100%;
+    }
+  }
+}

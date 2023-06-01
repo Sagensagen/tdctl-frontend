@@ -1,0 +1,44 @@
+@import 'src/styles/colors';
+
+.menuWrapper {
+  max-width: 400px;
+  position: relative;
+  border-radius: 3px;
+  border: solid 0.1rem $input-border;
+  width: 100%;
+
+  background-color: $input-background;
+}
+
+.activeElement {
+  padding: 0.4rem 1.5rem 0.4rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  align-items: center;
+}
+
+.activeElement:hover {
+  border-bottom: none;
+  cursor: pointer;
+  color: $active-label-color;
+}
+
+.menuList {
+  position: relative;
+}
+
+.menuListItem {
+  padding: 0.4rem 1.5rem 0.4rem 1rem;
+  border-top: solid 0.08rem#333333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuListItem:hover {
+  cursor: pointer;
+  background-color: $active-label-color;
+}

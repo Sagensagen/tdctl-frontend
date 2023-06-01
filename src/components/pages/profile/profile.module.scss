@@ -1,0 +1,33 @@
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.settingsBox {
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+
+.activateContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.updatePasswordContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .settingsBox {
+    width: 100%;
+  }
+}
